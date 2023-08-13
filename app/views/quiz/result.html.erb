@@ -1,24 +1,55 @@
-<h1>結果発表！！</h1>
-<h2>あなたの正解率は8問中 <%= @score %> 問でした</h2>
-<% if @score == 8 %>
-  <h1>あなたのゴリラ博識度は、【クロスリバーゴリラ級】です。</h1>
+<div class="center-content">
+  <h1>結果発表！！</h1>
+  <h2>あなたの正解率は8問中 <%= @score %> 問でした</h2>
+  <br>
+  <% if @score == 8 %>
+    <h1>あなたのゴリラ博識度は<br>【クロスリバーゴリラ級】です。</h1>
+    <%= image_tag "Nice_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
+    <p>
     <p>
       ウッホ！ウホホホ！<br>
-      (素晴らしい！君はゴリラ博識者ですね！！)
+      (素晴らしい！これで君は我々の仲間入りだ！！)
     </p>
-<% elsif @score >= 4 %>
-  <h1>あなたのゴリラ博識度は、【マウンテンゴリラ級】です</h1>
+  <% elsif @score >= 4 %>
+    <h1>あなたのゴリラ博識度は<br>【マウンテンゴリラ級】です</h1>
+    <%= image_tag "Mountain_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
     <p>
       ウホホ、ウホホウホ<br>
-      (まぁまぁですね、もう少し勉強しましょうね。)
+      (まぁまぁですね、その程度ではドラミングプロにはなれませんよ？)
     </p>
-<% elsif @score >= 1 %>
-  <h1>あなたのゴリラ博識度は、【ニシローランドゴリラ級】です</h1>
+  <% elsif @score >= 1 %>
+    <h1>あなたのゴリラ博識度は<br>【ニシローランドゴリラ級】です</h1>
+    <%= image_tag "Nishi_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
     <p>
       ウ、ウホッ、、、ウホホウホ？<br>
       (えっ、ゴリラ悲しいよ、、、もっと勉強してね？)
     </p>
-<% else %>
-  <h1>今夜あなたの家にゴリラを送り込むことにします。</h1>
-<% end %>
-<p><%= link_to "もう一度挑戦するウホ", root_path %></p>
+  <% else %>
+    <h1>今夜、あなたの家にゴリラを送り込むことにします。</h1>
+    <%= image_tag "Up_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
+  <% end %>
+
+  <%# Twitter共通用結果 %>
+  <% share_text = "私のゴリラ博識度は、8問中#{@score}問正解でした！" %>
+
+  <% if @score == 8 %>
+    <% share_text += "【クロスリバーゴリラ級】です。ウッホ！ウホホホ！" %>
+  <% elsif @score >= 4 %>
+    <% share_text += "【マウンテンゴリラ級】です。ウホホ、ウホホウホ" %>
+  <% elsif @score >= 1 %>
+    <% share_text += "【ニシローランドゴリラ級】です。ウ、ウホッ、、、ウホホウホ？" %>
+  <% else %>
+    <% share_text += "今夜、あなたの家にゴリラを送り込むことにします。" %>
+  <% end %>
+
+  <% share_text += " アプリでチャレンジしよう: #{root_url} #ゴリラによるゴリラ博識クイズ" %> <%# ルートURLを共有テキストに追加 %>
+
+  <%# URLエンコードします %>
+  <% share_url = URI.encode_www_form_component(share_text) %>
+
+  <%# Twitter共有リンクを作成します %>
+  <a href="https://twitter.com/intent/tweet?text=<%= share_url %>" target="_blank" class="share-button" >
+    Xで結果を共有するウホ！
+  </a><br>
+  <%= link_to "もう一度挑戦するウホ", root_path, class: 'start-button' %>
+</div>
