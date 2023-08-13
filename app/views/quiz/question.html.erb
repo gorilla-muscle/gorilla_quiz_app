@@ -1,0 +1,8 @@
+<h1>Question <%= @question_number %></h1>
+<p><%= simple_format @question[:text] %></p>
+
+<%= form_with url: quiz_answer_path do |f| %>
+  <%= f.hidden_field :question_number, value: @question_number %>
+  <%= f.submit "Yes", name: "answer", value: "Yes" %>
+  <%= f.submit "No", name: "answer", value: "No" %>
+<% end %>

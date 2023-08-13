@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'quiz#top'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'quiz/question/:id', to: 'quiz#question', as: :question
+  post 'quiz/answer', to: 'quiz#answer'
+  get 'quiz/result', to: 'quiz#result'
 end
