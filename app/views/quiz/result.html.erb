@@ -1,33 +1,35 @@
 <div class="center-content">
   <h1>結果発表！！</h1>
-  <h2>あなたの正解率は8問中 <%= @score %> 問でした</h2>
-  <br>
-  <% if @score == 8 %>
-    <h1>あなたのゴリラ博識度は<br>【クロスリバーゴリラ級】です。</h1>
-    <%= image_tag "Nice_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
-    <p>
-    <p>
-      ウッホ！ウホホホ！<br>
-      (素晴らしい！これで君は我々の仲間入りだ！！)
-    </p>
-  <% elsif @score >= 4 %>
-    <h1>あなたのゴリラ博識度は<br>【マウンテンゴリラ級】です</h1>
-    <%= image_tag "Mountain_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
-    <p>
-      ウホホ、ウホホウホ<br>
-      (まぁまぁですね、その程度ではドラミングプロにはなれませんよ？)
-    </p>
-  <% elsif @score >= 1 %>
-    <h1>あなたのゴリラ博識度は<br>【ニシローランドゴリラ級】です</h1>
-    <%= image_tag "Nishi_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
-    <p>
-      ウ、ウホッ、、、ウホホウホ？<br>
-      (えっ、ゴリラ悲しいよ、、、もっと勉強してね？)
-    </p>
-  <% else %>
-    <h1>今夜、あなたの家にゴリラを送り込むことにします。</h1>
-    <%= image_tag "Up_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
-  <% end %>
+  <div class = "content-body">
+    <h2>あなたの正解率は8問中 <%= @score %> 問でした</h2>
+    <br>
+    <% if @score == 8 %>
+      <h1>あなたのゴリラ博識度は<br>【クロスリバーゴリラ級】です。</h1>
+      <%= image_tag "Nice_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
+      <p>
+      <p>
+        ウッホ！ウホホホ！<br>
+        (素晴らしい！これで君は我々の仲間入りだ！！)
+      </p>
+    <% elsif @score >= 4 %>
+      <h1>あなたのゴリラ博識度は<br>【マウンテンゴリラ級】です</h1>
+      <%= image_tag "Mountain_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
+      <p>
+        ウホホ、ウホホウホ<br>
+        (まぁまぁですね、その程度ではドラミングプロにはなれませんよ？)
+      </p>
+    <% elsif @score >= 1 %>
+      <h1>あなたのゴリラ博識度は<br>【ニシローランドゴリラ級】です</h1>
+      <%= image_tag "Nishi_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
+      <p>
+        ウ、ウホッ、、、ウホホウホ？<br>
+        (えっ、ゴリラ悲しいよ、、、もっと勉強してね？)
+      </p>
+    <% else %>
+      <h1>今夜、あなたの家にゴリラを送り込むことにします。</h1>
+      <%= image_tag "Up_gorilla.png", alt: "ゴリラの画像", class:'icon' %>
+    <% end %>
+  </div>
 
   <%# Twitter共通用結果 %>
   <% share_text = "私のゴリラ博識度は、8問中#{@score}問正解でした！" %>

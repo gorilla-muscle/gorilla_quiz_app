@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
 body {
   margin: 0px;
   background-image: url("Gorilla.png");
@@ -6,7 +8,6 @@ body {
 	background-repeat: no-repeat;
   min-height: 100vh;
   position: relative;
-  font-family: "Times New Roman", sans-serif;
 }
 
 body::before {
@@ -44,12 +45,20 @@ header a:active {
   color: #ffffff;
 }
 
+.question {
+  font-family: "Times New Roman", sans-serif;
+}
+
 .center-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
   color: #ffffff;
   font-size: 20px;
+}
+
+.content-body{
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .start-button {
