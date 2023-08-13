@@ -1,15 +1,110 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  margin: 0px;
+  background-image: url("Gorilla.png");
+  background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Times New Roman", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  font-size: 25px;
+}
+
+header a,
+header a:visited,
+header a:hover,
+header a:active {
+  color: #ffffff; /* リンクの色を白に設定 */
+  text-decoration: none; 
+}
+
+
+.container {
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  color: #ffffff;
+}
+
+.center-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.start-button {
+  display: inline-block;
+  background-color: #b7c500; /* ボタンの背景色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディング */
+  margin: 20px; /* マージン */
+  text-align: center; /* テキストを中央揃え */
+  text-decoration: none; /* 下線を除去 */
+  font-size: 16px; /* フォントサイズ */
+  border-radius: 5px; /* 角の丸み */
+  cursor: pointer; /* カーソルをポインタに */
+}
+
+.start-button:hover {
+  opacity: 0.7; /* ホバー時の透明度を70%に設定 */
+}
+
+.button-yesno {
+  background-color: #b7c500; /* 背景色 */
+  color: white; /* 文字色 */
+  padding: 10px 20px; /* 内側の余白 */
+  margin: 20px; /* 外側の余白 */
+  border: none; /* 枠線をなくす */
+  cursor: pointer; /* カーソルを指マークに */
+  width: 100px; /* 幅のサイズ */
+  text-align: center; /* テキストを中央寄せ */
+  border-radius: 5px; /* 角の丸み */
+  font-size: 18px; /* テキストのサイズ */
+}
+
+/* ホバー時のスタイル */
+.button-yesno:hover {
+  opacity: 0.8;
+}
+
+.icon{
+  width: 450px;
+  height: 350px;
+}
+
+.share-button {
+  display: inline-block;
+  background-color: #383836; /* ボタンの背景色 */
+  color: white; /* テキストの色 */
+  padding: 10px 20px; /* パディング */
+  margin: 20px; /* マージン */
+  text-align: center; /* テキストを中央揃え */
+  text-decoration: none; /* 下線を除去 */
+  font-size: 16px; /* フォントサイズ */
+  border-radius: 5px; /* 角の丸み */
+  cursor: pointer; /* カーソルをポインタに */
+}
+
+.share-button:hover {
+  opacity: 0.7; /* ホバー時の透明度を70%に設定 */
+}
